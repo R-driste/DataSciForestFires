@@ -1,0 +1,8 @@
+'Area_Burned (Acres)'
+'Homes_Destroyed'
+'Businesses_Destroyed'
+'Vehicles_Damaged'
+'Injuries'
+'Fatalities'
+'Estimated_Financial_Loss (Million $)'
+'Cause'

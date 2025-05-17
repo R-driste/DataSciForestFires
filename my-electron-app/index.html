@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment Fire Damage Interface</title>
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    <h1>Environment Fire Damage Interface</h1>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildfire App Home</title>
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    <h1>Welcome to the Wildfire Analysis App</h1>
+    <p> This application hopes to address the effectiveness of different elementary prediction methods for wildfires.</p>
+    <p>Select an option to proceed:</p>
+
+    <div class="button-container">
+        <button id="goToRegress">Regression Analysis</button>
+        <button id="goToStats">Statistical Analysis</button>
+        <button id="goToVis">Computer Vision [Unfinished]</button>
+    </div>
+
+    <script>
+        document.getElementById('goToRegress').addEventListener('click', () => {
+            window.location.href = 'regress.html';
+        });
+
+        document.getElementById('goToStats').addEventListener('click', () => {
+            window.location.href = 'stats.html';
+        });
+
+        document.getElementById('goToVis').addEventListener('click', () => {
+            window.location.href = 'vision.html';
+        });
+    </script>
+
+</body>
+</html>

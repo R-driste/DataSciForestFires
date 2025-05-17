@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Computer Vision</h1>
+    <p> This is a computer vision interface for analyzing wildfire damage. You may upload a satellite image or a regular image.</p>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
+
+    <form id="imageform">
+        <label for = "imageInput">Upload Image:</label>
+        <input type="file" id="imageInput" name="imageInput" accept="image/*">
+    <p>We will check that the image is of an acceptable size and format for the model and return the results to you.</p>        
+    <button type="button" id="submitButton">Submit</button>
+    </form>
+
+
+    
+</body>
+</html>
