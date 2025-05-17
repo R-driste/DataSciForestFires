@@ -20,6 +20,8 @@ Using a dataset of forest fires from Portugal, I conducted a X^2 GOF test on the
 
 With the same dataset, I also wanted to test the true relevance of the Canada Fire Indices -- FFMC DMC ISI DC -- given in the csv. ISI (initial spread index) was the index we hypothesized would be most intuitively correlated to the fire area, and we were correct. However, the indexes all provided very little value in terms of prediction capability due to the correlation coefficients being very low.
 
+![Forest Fire Example](figures_graph/indices.png)
+
 - DATASET LINK: https://www.kaggle.com/datasets/sumitm004/forest-fire-area
 - Filenames: notebooks -> "GOFTEST.ipynb", "CORRELATE.ipynb"
 
