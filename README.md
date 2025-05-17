@@ -17,11 +17,11 @@ With a dataset of fires from California in the past decade, I setup a regression
 2.
 Using a dataset of forest fires from Portugal, I conducted a X^2 GOF test on the average area burned from the fires versus the month when the fires occured. I expected that the fire area burnt would more strongly correlate with summer months but upon removing 0 values and months with too little data, I found that there was no predictable progression for when the fires occured.
 
-![Forest Fire Example](figures_graph/fires_resid_chi.png)
+![X^2ResidGraph](figures_graph/fires_resid_chi.png)
 
 With the same dataset, I also wanted to test the true relevance of the Canada Fire Indices -- FFMC DMC ISI DC -- given in the csv. ISI (initial spread index) was the index we hypothesized would be most intuitively correlated to the fire area, and we were correct. However, the indexes all provided very little value in terms of prediction capability due to the correlation coefficients being very low.
 
-![Forest Fire Example](figures_graph/indices.png)
+![IndexCorrelationGraphs](figures_graph/indices.png)
 
 - DATASET LINK: https://www.kaggle.com/datasets/sumitm004/forest-fire-area
 - Reference to data: "DATASETS/forestfires.csv"
@@ -31,6 +31,11 @@ With the same dataset, I also wanted to test the true relevance of the Canada Fi
 
 3.
 This part of my project is still in early development but due to the unreliability of prediction methods 1 and 2, I wanted to train ResNet50 to identify fires from both satellite and regular images. I predict the regular images will be much easier to predict from due to being closer to the scene but satellite data would be more practical for early identification and I would like to see the extent of the difference between the two image types. As of the last training stage, the model has achieved 85% accuracy for reading satellite image data.
+
+<p align="center">
+  <img src="figures_graph/fire_norm.jpg" alt="NormalFireImg" width="400"/>
+  <img src="figures_graph/fire_sat.jpg" alt="SatFireImage" width="400"/>
+</p>
 
 - DATASET LINK: https://www.kaggle.com/datasets/brsdincer/wildfire-detection-image-data
 - DATASET LINK: https://www.kaggle.com/datasets/abdelghaniaaba/wildfire-prediction-dataset
