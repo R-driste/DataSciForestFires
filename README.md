@@ -1,5 +1,5 @@
 # DataSciForestFires
-An analysis of which factors best predict the spread of forest fires using data from Portugal and California.
+An analysis of which factors best predict the spread of forest fires using data from Portugal and California. My commit history is barren because of a merge conflict that caused me to need to reset my commits.
 
 As a Californian myself I have always been interested in how fire prediction models truly work and in this project I wanted to boost my novice DS/AI skills by trying multiple approaches to predicting factors about fires. I used a wide variety of datasets from kaggle to complete my task. Please unzip the datasets folder in order to run any scripts as it holds the correct collection of CSVs and images. Here are the datasets I used. Not all have been analyzed yet.:
 
@@ -10,3 +10,8 @@ As a Californian myself I have always been interested in how fire prediction mod
 
 This project is not fully complete but it is approaching the end. This project is also a submission to a challenge called Shipwrecked which I am very inspired by. It's a 4 day hackathon occuring in Boston this summer and I'm making it my mission to try and attend.
 I also created an electron app that will display the results of the project in greater detail. For the app to work the user must setup node on their local device. Because this was a learning project there are parts which have been assisted by Github copilot. Overall this was a good educational opportunity for me and I plan to conduct more robust analysis projects in the near future. Thank you for your support!
+
+To setup the electron app:
+cd your-folder-name
+npm init -y / npm install
+npm start
