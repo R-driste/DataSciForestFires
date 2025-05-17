@@ -9,6 +9,7 @@ This is a data analysis project for my statistics capstone project. I chose to s
 With a dataset of fires from California in the past decade, I setup a regression model to predict one aspect of the damages given the other. The dataset includes a vast number of quantifiable potential damages: Area_Burned (Acres), Homes_Destroyed, Businesses_Destroyed, Vehicles_Damaged, Injuries, Fatalities, and Estimated_Financial_Loss (Million $). Given values for one damage, the model can estimate the value for a specified target factor. I used scikit for the regression model. Because users will not always have all the values available to them, I included the imputer to substitute the mean value for the factor instead. The regression model will be available for interaction upon the completion of my electron app.
 
 - DATASET LINK: https://www.kaggle.com/datasets/vivekattri/california-wildfire-damage-2014-feb2025/code
+- Reference to data: "DATASETS/California Wildfire Damage.csv"
 - Filenames: notebooks -> "COST_analyze.ipynb"
 
 -----
@@ -23,6 +24,7 @@ With the same dataset, I also wanted to test the true relevance of the Canada Fi
 ![Forest Fire Example](figures_graph/indices.png)
 
 - DATASET LINK: https://www.kaggle.com/datasets/sumitm004/forest-fire-area
+- Reference to data: "DATASETS/forestfires.csv"
 - Filenames: notebooks -> "GOFTEST.ipynb", "CORRELATE.ipynb"
 
 -----
@@ -32,6 +34,7 @@ This part of my project is still in early development but due to the unreliabili
 
 - DATASET LINK: https://www.kaggle.com/datasets/brsdincer/wildfire-detection-image-data
 - DATASET LINK: https://www.kaggle.com/datasets/abdelghaniaaba/wildfire-prediction-dataset
+- Reference to data: "DATASETS/arch2DS/train", "DATASETS/arch2DS/test", "DATASETS/arch2DS/valid"
 - Filenames: notebooks -> "IMG_SAT.ipynb"
 
 -----
