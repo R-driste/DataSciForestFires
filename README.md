@@ -12,6 +12,12 @@ With a dataset of fires from California in the past decade, I setup a regression
 - Reference to data: "DATASETS/California Wildfire Damage.csv"
 - Filenames: notebooks -> "COST_analyze.ipynb"
 
+Unable to establish any strong correlation between these features, I looked to a different dataset with a wider variety of points to predict damage based on other factors available. There was more success here. Rather than surrounding the factors DURING the fire, a classification model demonstrated better success at categorizing houses into one of 3 risk levels with an accuracy of 93.2%.
+
+- DATASET LINK: https://www.kaggle.com/datasets/vijayveersingh/the-california-wildfire-data
+- Reference to data: "DATASETS/thecaldataset/damagepred.csv"
+- Filenames: notebooks -> "BEFORECOST_analyze.ipynb"
+
 -----
 
 2.
@@ -46,7 +52,7 @@ This part of my project is still in early development but due to the unreliabili
 
 To enable you to interact with the project yourself, I began developing an electron app which will load the model weights and allow you to use them. The data analysis and app deployment for this project are still incompete but steadily approaching the end.
 
-The notebooks will not run unless the dataset links given in this readme file are uploaded to the DATASETS folder. To run the electron app at this moment you must setup node on your local computer (unadvisable) but a better deployed version will be available soon. The figures for this project are placed in the figures folder and the notebooks with which I ran these tests are within the notebooks folder.
+Models can be found here: "https://drive.google.com/drive/folders/1NtlcDVtSW8UDGg4XcTZIyC7zDO8yrsW3?usp=sharing" and must be uploaded to a models folder. The notebooks will not run unless the dataset links given in this readme file are uploaded to the DATASETS folder. To run the electron app at this moment you must setup node on your local computer (unadvisable) but a better deployed version will be available soon. The figures for this project are placed in the figures folder and the notebooks with which I ran these tests are within the notebooks folder.
 
 To setup the electron app:
 cd your-folder-name
