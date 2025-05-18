@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen your House for Risk of Fire Damage</title>
+    <link rel="stylesheet" href = "styling.css"
+</head>
+
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
+    <h1>Screen your House for Risk of Fire Damage</h1>
+    <p> Enter in the correct values corresponding to your house to screen risk for damage with 93% accuracy</p>
+    <form id="fire-risk-form">
+        <div class="form-group">
+        <label>Zip Code:</label>
+        <input type="text" name="zip_code">
+        </div>
+
+        <div class="form-group">
+        <label>CAL FIRE Unit:</label>
+        <input type="text" name="cal_fire_unit">
+        </div>
+
+        <div class="form-group">
+        <label>Hazard Type:</label>
+        <input type="text" name="hazard_type">
+        </div>
+
+        <div class="form-group">
+        <label>Structure Defense Actions Taken:</label>
+        <input type="text" name="defense_actions">
+        </div>
+
+        <div class="form-group">
+        <label>Structure Type:</label>
+        <input type="text" name="structure_type">
+        </div>
+
+        <div class="form-group">
+        <label># Units in Structure (if multi-unit):</label>
+        <input type="number" name="units_in_structure" min="1">
+        </div>
+
+        <div class="form-group">
+        <label># of Damaged Outbuildings &lt; 120 SQFT:</label>
+        <input type="number" name="damaged_outbuildings" min="0">
+        </div>
+
+        <div class="form-group">
+        <label># of Non-Damaged Outbuildings &lt; 120 SQFT:</label>
+        <input type="number" name="non_damaged_outbuildings" min="0">
+        </div>
+
+        <div class="form-group">
+        <label>Roof Construction:</label>
+        <input type="text" name="roof_construction">
+        </div>
+
+        <div class="form-group">
+        <label>Eaves:</label>
+        <input type="text" name="eaves">
+        </div>
+
+        <div class="form-group">
+        <label>Vent Screen:</label>
+        <input type="text" name="vent_screen">
+        </div>
+
+        <div class="form-group">
+        <label>Exterior Siding:</label>
+        <input type="text" name="exterior_siding">
+        </div>
+
+        <div class="form-group">
+        <label>Window Pane:</label>
+        <input type="text" name="window_pane">
+        </div>
+
+        <div class="form-group">
+        <label>Deck/Porch On Grade:</label>
+        <input type="text" name="deck_on_grade">
+        </div>
+
+        <div class="form-group">
+        <label>Deck/Porch Elevated:</label>
+        <input type="text" name="deck_elevated">
+        </div>
+
+        <div class="form-group">
+        <label>Patio Cover/Carport Attached to Structure:</label>
+        <input type="text" name="patio_cover">
+        </div>
+
+        <div class="form-group">
+        <label>Fence Attached to Structure:</label>
+        <input type="text" name="fence_attached">
+        </div>
+
+        <div class="form-group">
+        <label>Distance - Propane Tank to Structure (ft):</label>
+        <input type="number" name="distance_propane" step="0.1">
+        </div>
+
+        <div class="form-group">
+        <label>Distance - Residence to Utility/Misc Structure &gt; 120 SQFT (ft):</label>
+        <input type="number" name="distance_utility" step="0.1">
+        </div>
+
+        <div class="form-group">
+        <label>Assessed Improved Value (parcel):</label>
+        <input type="number" name="assessed_value" step="0.01">
+        </div>
+
+        <div class="form-group">
+        <label>Year Built (parcel):</label>
+        <input type="number" name="year_built">
+        </div>
+
+        <div class="form-group">
+        <label>Latitude:</label>
+        <input type="number" name="latitude" step="0.000001">
+        </div>
+
+        <div class="form-group">
+        <label>Longitude:</label>
+        <input type="number" name="longitude" step="0.000001">
+        </div>
+
+        <div class="form-group">
+        <label>X:</label>
+        <input type="number" name="x" step="0.01">
+        </div>
+
+        <div class="form-group">
+        <label>Y:</label>
+        <input type="number" name="y" step="0.01">
+        </div>
+
+        <div class="form-group">
+        <button type="submit">Submit Assessment</button>
+        </div>
+  </form>
+
+</body>
+</html>
