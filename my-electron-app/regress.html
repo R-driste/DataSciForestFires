@@ -17,39 +17,44 @@
         The more details that are left blank, the less accurate the prediction will be.
     </p>
     <form id="inputForm">
-        <label for="selectedFeature">Select Feature to Predict:</label>
-        <select id="selectedFeature" name="selectedFeature">
-            <option value="areaBurned">Area Burned</option>
-            <option value="homesdestroyed">Homes Destroyed</option>
-            <option value="vehiclesDamaged">Vehicles Damaged</option>
-            <option value="businessesDestroyed">Businesses Destroyed</option>
-            <option value="injuries">Injuries</option>
-            <option value="fatalities">Fatalities</option>
-            <option value="financialLoss">Estimated Financial Loss</option>
-        </select><br><br>
-        
-        <label for="areaBurned">Area Burned (Acres):</label>
-        <input type="number" id="areaBurned" name="areaBurned" required><br><br>
+        <div class="form-row">
+            <div class="form-column">
+                <label for="selectedFeature">Select Feature to Predict:</label>
+                <select id="selectedFeature" name="selectedFeature">
+                    <option value="areaBurned">Area Burned</option>
+                    <option value="homesdestroyed">Homes Destroyed</option>
+                    <option value="vehiclesDamaged">Vehicles Damaged</option>
+                    <option value="businessesDestroyed">Businesses Destroyed</option>
+                    <option value="injuries">Injuries</option>
+                    <option value="fatalities">Fatalities</option>
+                    <option value="financialLoss">Estimated Financial Loss</option>
+                </select>
+                
+                <label for="areaBurned">Area Burned (Acres):</label>
+                <input type="number" id="areaBurned" name="areaBurned" required><br><br>
 
-        <label for="homesBurnt">Homes Burnt:</label>
-        <input type="number" id="homesBurnt" name="homesBurnt" required><br><br>
+                <label for="homesBurnt">Homes Burnt:</label>
+                <input type="number" id="homesBurnt" name="homesBurnt" required><br><br>
 
-        <label for="vehiclesDamaged">Vehicles Damaged:</label>
-        <input type="number" id="vehiclesDamaged" name="vehiclesDamaged" required><br><br>
+                <label for="vehiclesDamaged">Vehicles Damaged:</label>
+                <input type="number" id="vehiclesDamaged" name="vehiclesDamaged" required><br><br>
 
-        <label for="businessesDestroyed">Businesses Destroyed:</label>
-        <input type="number" id="businessesDestroyed" name="businessesDestroyed" required><br><br>
+                <label for="businessesDestroyed">Businesses Destroyed:</label>
+                <input type="number" id="businessesDestroyed" name="businessesDestroyed" required><br><br>
+            </div>
+            <div class="form-column">
+                <label for="injuries">Injuries:</label>
+                <input type="number" id="injuries" name="injuries" required><br><br>
 
-        <label for="injuries">Injuries:</label>
-        <input type="number" id="injuries" name="injuries" required><br><br>
+                <label for="fatalities">Fatalities:</label>
+                <input type="number" id="fatalities" name="fatalities" required><br><br>
 
-        <label for="fatalities">Fatalities:</label>
-        <input type="number" id="fatalities" name="fatalities" required><br><br>
+                <label for="financialLoss">Estimated Financial Loss ($):</label>
+                <input type="number" id="financialLoss" name="financialLoss" required><br><br>
 
-        <label for="financialLoss">Estimated Financial Loss ($):</label>
-        <input type="number" id="financialLoss" name="financialLoss" required><br><br>
-
-        <button type="button" id="submitButton">Submit</button>
+                <button type="button" id="submitButton">Submit</button>
+            </div>
+        </div>
     </form>
 
     <div id="result"></div>

@@ -8,53 +8,22 @@
 </head>
 <body>
     <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
-    <h1>Statistical Analysis</h1>
-    <p>Here are the key statistics regarding how indices and time of year relate to fires.
-        Of all the indices, the most significant one was the ISI index but a majority of them
-        were insignificant, meaning that they must go through improvement or there must be 
-        stronger ways to predict in advance the likelihood of a fire starting.
+    <h1>Pt. 1: Initial Statistical Analysis</h1>
+
+    <p>Using a dataset of forest fires from Portugal, I conducted a X^2 GOF test on the average log transformed area burned from the fires versus the month when the fires occured. I expected that the fire area burnt would more strongly correlate with summer months but upon removing 0 values and months with too little data, I found that there was no predictable progression for when the fires occured. Chi-squared Statistic: 133.44535804252422, P-value: 5.458164270329626e-25.
+        </p>
+        <div style="text-align: center;">
+        <img src="../figures_graph/fires_resid_chi.png" alt="X^2ResidGraph" style="width: 300; height: auto;">
+        </div>
+
+    <p>
+    With the same dataset, I also wanted to test the true relevance of the Canada Fire Indices -- FFMC DMC ISI DC -- given in the csv. ISI (initial spread index) was the index we hypothesized would be most intuitively correlated to the fire area, and we were correct. However, the indexes all provided very little value in terms of prediction capability due to the correlation coefficients being very low. This led me to search for the alternative prediction methods in the later parts of this application.
     </p>
+    <img src="../figures_graph/indices.png" alt="IndexCorrelationGraphs">
     <br>
-    <p>
-        The first thing we wanted to test was the indices of the fire season and how they
-        related to the area of fire affected. We found that the ISI index was the best predictor
-        but all indexes were nearly insignificant, meaning there needs to be a higher emphasis on
-        other methods of fire prediction.
-    </p>
-    <div class="figures-container">
-        <img src="figures_graph/output_FFMC.png" alt="FFMC">
-        <img src="figures_graph/output_DMC.png" alt="DMC">
-        <img src="figures_graph/output_DC.png" alt="DC">
-        <img src="figures_graph/output_ISI.png" alt="ISI">
-    </div>
-
-    <p>
-        We also wanted to test the relationship between our predictions on the time of year that
-        would have the most are burnt to the fires. We predicted that summer time would be the greatest
-        but after removing cases with nearly 0 (essentially no significant fire) our X^2 GOF test showed
-        that the month values completely deviated from our expectations.
-    </p>
-
-    <div class="stats-container">
-        <div class="stat-item">
-            <h2>Total Fires</h2>
-            <p id="totalFires">Loading...</p>
-        </div>
-        <div class="stat-item">
-            <h2>Average Area Burned</h2>
-            <p id="avgAreaBurned">Loading...</p>
-        </div>
-        <div class="stat-item">
-            <h2>Most Common Cause</h2>
-            <p id="commonCause">Loading...</p>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('totalFires').innerText = '1,235';
-        document.getElementById('avgAreaBurned').innerText = '567 acres';
-        document.getElementById('commonCause').innerText = 'Lightning';
-    </script>
+    - DATASET LINK: https://www.kaggle.com/datasets/sumitm004/forest-fire-area
+    - Reference to data: "DATASETS/forestfires.csv"
+    - Filenames: notebooks -> "GOFTEST.ipynb", "CORRELATE.ipynb"
 
 </body>
 </html>

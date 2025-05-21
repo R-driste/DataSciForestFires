@@ -1,2 +1,3 @@
 node_modules/
-models/
+my-electron-app/models/
+venv/

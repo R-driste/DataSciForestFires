@@ -4,143 +4,259 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screen your House for Risk of Fire Damage</title>
-    <link rel="stylesheet" href = "styling.css"
+    <link rel="stylesheet" href = "styling.css">
 </head>
-
 <body>
     <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
     <h1>Screen your House for Risk of Fire Damage</h1>
     <p> Enter in the correct values corresponding to your house to screen risk for damage with 93% accuracy</p>
     <form id="fire-risk-form">
-        <div class="form-group">
-        <label>Zip Code:</label>
-        <input type="text" name="zip_code">
+    <div class="form-row">
+        <div class="form-column">
+            <div class="form-group">
+                <label>Zip Code:</label>
+                <input type="text" name="zip_code">
+            </div>
+
+            <div class="form-group">
+                <label>* CAL FIRE Unit:</label>
+                <select name="cal_fire_unit">
+                <option value="BDU">BDU</option>
+                <option value="BEU">BEU</option>
+                <option value="BTU">BTU</option>
+                <option value="CZU">CZU</option>
+                <option value="FKU">FKU</option>
+                <option value="HUU">HUU</option>
+                <option value="KRN">KRN</option>
+                <option value="LAC">LAC</option>
+                <option value="LMU">LMU</option>
+                <option value="LNU">LNU</option>
+                <option value="MEU">MEU</option>
+                <option value="MMU">MMU</option>
+                <option value="MVU">MVU</option>
+                <option value="NEU">NEU</option>
+                <option value="ORC">ORC</option>
+                <option value="RRU">RRU</option>
+                <option value="SBC">SBC</option>
+                <option value="SCU">SCU</option>
+                <option value="SDU">SDU</option>
+                <option value="SHU">SHU</option>
+                <option value="SKU">SKU</option>
+                <option value="SLU">SLU</option>
+                <option value="TCU">TCU</option>
+                <option value="TGU">TGU</option>
+                <option value="TUU">TUU</option>
+                <option value="VNC">VNC</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Hazard Type:</label>
+                <select name="hazard_type">
+                <option value="Fire">Fire</option>
+                <option value="Flood">Flood</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Structure Defense Actions Taken:</label>
+                <select name="defense_actions">
+                <option value="Civilian">Civilian</option>
+                <option value="Combination of Actions">Combination of Actions</option>
+                <option value="Dozer Fuel Break">Dozer Fuel Break</option>
+                <option value="Engine Company Actions">Engine Company Actions</option>
+                <option value="Fire Department">Fire Department</option>
+                <option value="Fire Retardant Drop">Fire Retardant Drop</option>
+                <option value="Hand Crew Fuel Break">Hand Crew Fuel Break</option>
+                <option value="Other">Other</option>
+                <option value="Unknown">Unknown</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>* Structure Type:</label>
+                <select name="structure_type">
+                <option value="Church">Church</option>
+                <option value="Commercial Building Multi Story">Commercial Building Multi Story</option>
+                <option value="Commercial Building Single Story">Commercial Building Single Story</option>
+                <option value="Hospital">Hospital</option>
+                <option value="Infrastructure">Infrastructure</option>
+                <option value="Mixed Commercial/Residential">Mixed Commercial/Residential</option>
+                <option value="Mobile Home Double Wide">Mobile Home Double Wide</option>
+                <option value="Mobile Home Single Wide">Mobile Home Single Wide</option>
+                <option value="Mobile Home Triple Wide">Mobile Home Triple Wide</option>
+                <option value="Motor Home">Motor Home</option>
+                <option value="Multi Family Residence Multi Story">Multi Family Residence Multi Story</option>
+                <option value="Multi Family Residence Single Story">Multi Family Residence Single Story</option>
+                <option value="School">School</option>
+                <option value="Single Family Residence Multi Story">Single Family Residence Multi Story</option>
+                <option value="Single Family Residence Single Story">Single Family Residence Single Story</option>
+                <option value="Single Famliy Residence Single Story">Single Famliy Residence Single Story</option>
+                <option value="Utility Misc Structure">Utility Misc Structure</option>
+                <option value="Utility or Miscellaneous Structure > 120 sqft">Utility or Miscellaneous Structure > 120 sqft</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label># Units in Structure (if multi unit):</label>
+                <input type="number" name="units_in_structure" min="1">
+            </div>
+
+            <div class="form-group">
+                <label>* Roof Construction:</label>
+                <select name="roof_construction">
+                <option value="Asphalt">Asphalt</option>
+                <option value="Combustible">Combustible</option>
+                <option value="Concrete">Concrete</option>
+                <option value="Fire Resistant">Fire Resistant</option>
+                <option value="Metal">Metal</option>
+                <option value="No Deck/Porch">No Deck/Porch</option>
+                <option value="Other">Other</option>
+                <option value="Tile">Tile</option>
+                <option value="Unknown">Unknown</option>
+                <option value="Wood">Wood</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>* Eaves:</label>
+                <select name="eaves">
+                <option value="Enclosed">Enclosed</option>
+                <option value="No Eaves">No Eaves</option>
+                <option value="Not Applicable">Not Applicable</option>
+                <option value="Unenclosed">Unenclosed</option>
+                <option value="Unknown">Unknown</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>* Vent Screen:</label>
+                <select name="vent_screen">
+                <option value="21-30">21-30</option>
+                <option value=">30">&gt;30</option>
+                <option value="Deck Elevated">Deck Elevated</option>
+                <option value="Mesh Screen <= 1/8\"">Mesh Screen &lt;= 1/8"</option>
+                <option value="Mesh Screen > 1/8\"">Mesh Screen &gt; 1/8"</option>
+                <option value="No Vents">No Vents</option>
+                <option value="Screened">Screened</option>
+                <option value="Unknown">Unknown</option>
+                <option value="Unscreened">Unscreened</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>* Exterior Siding:</label>
+                <select name="exterior_siding">
+                <option value="Combustible">Combustible</option>
+                <option value="Fire Resistant">Fire Resistant</option>
+                <option value="Ignition Resistant">Ignition Resistant</option>
+                <option value="Metal">Metal</option>
+                <option value="Other">Other</option>
+                <option value="Stucco Brick Cement">Stucco Brick Cement</option>
+                <option value="Stucco/Brick/Cement">Stucco/Brick/Cement</option>
+                <option value="Unknown">Unknown</option>
+                <option value="Vinyl">Vinyl</option>
+                <option value="Wood">Wood</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>* Window Pane:</label>
+                <select name="window_pane">
+                <option value="Multi Pane">Multi Pane</option>
+                <option value="No Deck/Porch">No Deck/Porch</option>
+                <option value="No Windows">No Windows</option>
+                <option value="Radiant Heat">Radiant Heat</option>
+                <option value="Single Pane">Single Pane</option>
+                <option value="Unknown">Unknown</option>
+                </select>
+            </div>
         </div>
 
-        <div class="form-group">
-        <label>CAL FIRE Unit:</label>
-        <input type="text" name="cal_fire_unit">
-        </div>
+        STOPPED HERE
 
-        <div class="form-group">
-        <label>Hazard Type:</label>
-        <input type="text" name="hazard_type">
-        </div>
+        <div class="form-column">
+            <div class="form-group">
+                <label>* Deck/Porch On Grade:</label>
+                <select name="deck_on_grade">
+                <option value="Composite">Composite</option>
+                <option value="Masonry/Concrete">Yes</option>
+                <option value="No Deck/Porch">No Deck/Porch</option>
+                <option value="Unknown">Unknown</option>
+                <option value="Wood">Wood</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-        <label>Structure Defense Actions Taken:</label>
-        <input type="text" name="defense_actions">
-        </div>
+            <div class="form-group">
+                <label>* Deck/Porch Elevated:</label>
+                <select name="deck_elevated">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-        <label>Structure Type:</label>
-        <input type="text" name="structure_type">
-        </div>
+            <div class="form-group">
+                <label>* Patio Cover/Carport Attached to Structure:</label>
+                <select name="patio_cover">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-        <label># Units in Structure (if multi-unit):</label>
-        <input type="number" name="units_in_structure" min="1">
-        </div>
+            <div class="form-group">
+                <label>Distance - Propane Tank to Structure:</label>
+                <select name="distance_propane">
+                <option value="0-10">0-10</option>
+                <option value="11-20">11-20</option>
+                <option value="21-30">21-30</option>
+                <option value=">30">&gt;30</option>
+                <option value="Unknown">Unknown</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-        <label># of Damaged Outbuildings &lt; 120 SQFT:</label>
-        <input type="number" name="damaged_outbuildings" min="0">
-        </div>
+            <div class="form-group">
+                <label>Distance - Residence to Utility/Misc Structure > 120 SQFT:</label>
+                <select name="distance_misc_structure">
+                <option value="30">30</option>
+                <option value="30-50'">30-50'</option>
+                <option value="50">50</option>
+                <option value="<30'">&lt;30'</option>
+                <option value=">50'">&gt;50'</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-        <label># of Non-Damaged Outbuildings &lt; 120 SQFT:</label>
-        <input type="number" name="non_damaged_outbuildings" min="0">
-        </div>
+            <div class="form-group">
+                <label>Year Built (parcel):</label>
+                <input type="number" name="year_built">
+            </div>
 
-        <div class="form-group">
-        <label>Roof Construction:</label>
-        <input type="text" name="roof_construction">
-        </div>
+            <div class="form-group">
+                <label>Latitude:</label>
+                <input type="number" name="latitude" step="0.000001">
+            </div>
 
-        <div class="form-group">
-        <label>Eaves:</label>
-        <input type="text" name="eaves">
-        </div>
+            <div class="form-group">
+                <label>Longitude:</label>
+                <input type="number" name="longitude" step="0.000001">
+            </div>
 
-        <div class="form-group">
-        <label>Vent Screen:</label>
-        <input type="text" name="vent_screen">
-        </div>
+            <div class="form-group">
+                <label>X:</label>
+                <input type="number" name="x" step="0.01">
+            </div>
 
-        <div class="form-group">
-        <label>Exterior Siding:</label>
-        <input type="text" name="exterior_siding">
-        </div>
+            <div class="form-group">
+                <label>Y:</label>
+                <input type="number" name="y" step="0.01">
+            </div>
 
-        <div class="form-group">
-        <label>Window Pane:</label>
-        <input type="text" name="window_pane">
+            <div class="form-group">
+                <button id="submit-button" type="submit">Submit Details</button>
+            </div>
         </div>
+    </div>
+    </form>
 
-        <div class="form-group">
-        <label>Deck/Porch On Grade:</label>
-        <input type="text" name="deck_on_grade">
-        </div>
-
-        <div class="form-group">
-        <label>Deck/Porch Elevated:</label>
-        <input type="text" name="deck_elevated">
-        </div>
-
-        <div class="form-group">
-        <label>Patio Cover/Carport Attached to Structure:</label>
-        <input type="text" name="patio_cover">
-        </div>
-
-        <div class="form-group">
-        <label>Fence Attached to Structure:</label>
-        <input type="text" name="fence_attached">
-        </div>
-
-        <div class="form-group">
-        <label>Distance - Propane Tank to Structure (ft):</label>
-        <input type="number" name="distance_propane" step="0.1">
-        </div>
-
-        <div class="form-group">
-        <label>Distance - Residence to Utility/Misc Structure &gt; 120 SQFT (ft):</label>
-        <input type="number" name="distance_utility" step="0.1">
-        </div>
-
-        <div class="form-group">
-        <label>Assessed Improved Value (parcel):</label>
-        <input type="number" name="assessed_value" step="0.01">
-        </div>
-
-        <div class="form-group">
-        <label>Year Built (parcel):</label>
-        <input type="number" name="year_built">
-        </div>
-
-        <div class="form-group">
-        <label>Latitude:</label>
-        <input type="number" name="latitude" step="0.000001">
-        </div>
-
-        <div class="form-group">
-        <label>Longitude:</label>
-        <input type="number" name="longitude" step="0.000001">
-        </div>
-
-        <div class="form-group">
-        <label>X:</label>
-        <input type="number" name="x" step="0.01">
-        </div>
-
-        <div class="form-group">
-        <label>Y:</label>
-        <input type="number" name="y" step="0.01">
-        </div>
-
-        <div class="form-group">
-        <button type="submit">Submit Assessment</button>
-        </div>
-  </form>
-
+    <script src="getformdata.js"></script>
 </body>
 </html>

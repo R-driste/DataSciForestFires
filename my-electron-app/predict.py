@@ -5,6 +5,7 @@ import numpy as np
 
 model = joblib.load("/Users/dristiroy/DATASCIFORESTFIRES/DataSciForestFires/my-electron-app/regression_model.pkl")
 
+
 args = sys.argv
 inputs = json.loads(args[1])
 selected_feature = args[2]
