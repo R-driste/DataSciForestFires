@@ -36,7 +36,7 @@ With the same dataset, I also wanted to test the true relevance of the Canada Fi
 -----
 
 3.
-This part of my project is still in early development but due to the unreliability of prediction methods 1 and 2, I wanted to train ResNet50 to identify fires from both satellite and regular images. I predict the regular images will be much easier to predict from due to being closer to the scene but satellite data would be more practical for early identification and I would like to see the extent of the difference between the two image types. As of the last training stage, the model has achieved 85% accuracy for reading satellite image data.
+Due to the unreliability of prediction methods 1 and 2, I wanted to train ResNet18 to identify fires from both satellite and regular images. I predict the regular images will be much easier to predict from due to being closer to the scene but satellite data would be more practical for early identification and I would like to see the extent of the difference between the two image types. As of the last training stage, the model has achieved 85% accuracy for classifying satellite image data and 90% accuracy for classifying normal data as fire/no fire.
 
 <p align="center">
   <img src="figures_graph/fire_norm.jpg" alt="NormalFireImg" width="400"/>

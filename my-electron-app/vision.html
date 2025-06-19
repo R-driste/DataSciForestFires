@@ -4,21 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styling.css">
-    <title>Document</title>
+    <title>Computer Vision</title>
 </head>
 <body>
     <h1>Computer Vision</h1>
-    <p> This is a computer vision interface for analyzing wildfire damage. You may upload a satellite image or a regular image.</p>
+    <p>This is a computer vision interface for analyzing wildfire damage. You may upload a satellite image or a regular image.</p>
+    
     <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
 
-    <form id="imageform">
-        <label for = "imageInput">Upload Image:</label>
+    <form id="vision-form">
+        <label for="imageType">Select Image Type:</label>
+        <select id="imageType" name="imageType">
+            <option value="Satellite">Satellite</option>
+            <option value="Regular">Regular</option>
+        </select>
+        <br><br>
+        <label for="imageInput">Upload Image:</label>
         <input type="file" id="imageInput" name="imageInput" accept="image/*">
-    <p>We will check that the image is of an acceptable size and format for the model and return the results to you.</p>        
-    <button type="button" id="submitButton">Submit</button>
+        <p>We will check that the image is of an acceptable size and format for the model and return the results to you.</p>
+        <button type="submit" id="submitButton">Submit</button>
     </form>
 
-
-    
+    <script>
+        document.getElementById("vision-form").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const file = document.getElementById("imageInput").files[0];
+            const imageType = document.getElementById("imageType").value;
+            if (!file) return alert("No file selected.");
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const base64Image = event.target.result;
+                const formData = {
+                    base64: base64Image,
+                    imageType: imageType
+                };
+                window.electronAPI.submitVisionForm(formData);
+            };
+            reader.readAsDataURL(file);
+        });
+    </script>
 </body>
 </html>

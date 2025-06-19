@@ -1,3 +1,6 @@
 node_modules/
 my-electron-app/models/
+my-electron-app/heavy_zip/
 venv/
+DATASETS/
+backups/
