@@ -52,11 +52,15 @@ Due to the unreliability of prediction methods 1 and 2, I wanted to train ResNet
 
 To enable you to interact with the project yourself, I began developing an electron app which will load the model weights and allow you to use them. The data analysis and app deployment for this project are still incompete but steadily approaching the end.
 
-Models can be found here: "https://drive.google.com/drive/folders/1NtlcDVtSW8UDGg4XcTZIyC7zDO8yrsW3?usp=sharing" and must be uploaded to a models folder. The notebooks will not run unless the dataset links given in this readme file are uploaded to the DATASETS folder. To run the electron app at this moment you must setup node on your local computer (unadvisable) but a better deployed version will be available soon. The figures for this project are placed in the figures folder and the notebooks with which I ran these tests are within the notebooks folder.
+To use the app, please download this repository to your local computer. Download and move these zips ("DATASETS" and "heavy_zip") to the my-electron-app folder, then expand them. These hold the models and datasets. Without these files, the app and notebooks will not work properly. These files are too large to be transmitted through Github without warning.
 
-To setup the electron app:
+To run the electron app at this moment you must setup node on your local computer (unadvisable) but a better deployed version will be available soon. The figures for this project are placed in the figures folder and the notebooks with which I ran these tests are within the notebooks folder.
+
+```bash
 cd your-folder-name
-npm init -y / npm install
+npm init -y
+npm install
 npm start
+```
 
 This project is also a submission to a challenge called Shipwrecked which I am very inspired by. Thank you for your support. - Dristi Roy
