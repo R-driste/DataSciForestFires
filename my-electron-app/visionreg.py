@@ -7,8 +7,11 @@ from torchvision import models, transforms
 import torch.nn as nn
 import simpleaudio as sa
 from PIL import Image
+import os
 
-wave_obj = sa.WaveObject.from_wave_file("clock.wav")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+wave_obj = sa.WaveObject.from_wave_file(os.path.join(BASE_DIR, 'audio', 'clock.wav'))
 play_obj = wave_obj.play()
 play_obj.wait_done()
 
@@ -23,7 +26,7 @@ transform = transforms.Compose([
 
 model = models.resnet18()
 model.fc = nn.Linear(model.fc.in_features, 2)
-model.load_state_dict(torch.load("heavy_zip/vision/resnet18_amalgam.pth", map_location=device))
+model.load_state_dict(torch.load(os.path.join(BASE_DIR, 'heavy_zip', 'vision', 'resnet18_amalgam.pth'), map_location=device))
 model = model.to(device)
 model.eval()
 
@@ -52,7 +55,7 @@ with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
 prediction = predict_image(tmp_path)
 explanation = f"This {image_type.lower()} image was classified as {prediction.lower()}."
 
-wave_obj = sa.WaveObject.from_wave_file("positive.wav")
+wave_obj = sa.WaveObject.from_wave_file(os.path.join(BASE_DIR, 'audio', 'positive.wav'))
 play_obj = wave_obj.play()
 play_obj.wait_done()
 

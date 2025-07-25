@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="styling.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
 </head>
-<body>
+<body class="winky-rough">
     <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
     <h1>Initial Statistical Analysis</h1>
 
     <p>Using a dataset of forest fires from Portugal, I conducted a X^2 GOF test on the average log transformed area burned from the fires versus the month when the fires occured. I expected that the fire area burnt would more strongly correlate with summer months but upon removing 0 values and months with too little data, I found that there was no predictable progression for when the fires occured. Chi-squared Statistic: 133.44535804252422, P-value: 5.458164270329626e-25.
         </p>
         <div style="text-align: center;">
-        <img src="../figures_graph/fires_resid_chi.png" alt="X^2ResidGraph" style="width: 300; height: auto;">
+        <img src="figures_graph/fires_resid_chi.png" alt="X^2ResidGraph" style="width: 300; height: auto;">
         </div>
 
     <p>
     With the same dataset, I also wanted to test the true relevance of the Canada Fire Indices -- FFMC DMC ISI DC -- given in the csv. ISI (initial spread index) was the index we hypothesized would be most intuitively correlated to the fire area, and we were correct. However, the indexes all provided very little value in terms of prediction capability due to the correlation coefficients being very low. This led me to search for the alternative prediction methods in the later parts of this application.
     </p>
-    <img src="../figures_graph/indices.png" alt="IndexCorrelationGraphs">
+    <img src="figures_graph/indices.png" alt="IndexCorrelationGraphs">
     <br>
     - DATASET LINK: https://www.kaggle.com/datasets/sumitm004/forest-fire-area
     - Reference to data: "DATASETS/forestfires.csv"

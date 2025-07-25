@@ -10,7 +10,9 @@ import simpleaudio as sa
 import os
 import logging
 
-wave_obj = sa.WaveObject.from_wave_file("clock.wav")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+wave_obj = sa.WaveObject.from_wave_file(os.path.join(BASE_DIR, 'audio', 'clock.wav'))
 play_obj = wave_obj.play()
 play_obj.wait_done()
 
@@ -20,7 +22,7 @@ logging.getLogger('tensorflow').setLevel(logging.ERROR)
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-model = load_model("heavy_zip/vision/secondmod.h5")
+model = load_model(os.path.join(BASE_DIR, 'heavy_zip', 'vision', 'secondmod.h5'))
 class_names = ['nofire', 'fire']
 
 def preprocess_image(image_path):
@@ -48,7 +50,7 @@ with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
 prediction = predict_image(tmp_path)
 explanation = f"This {image_type.lower()} image was classified as {prediction.lower()}."
 
-wave_obj = sa.WaveObject.from_wave_file("positive.wav")
+wave_obj = sa.WaveObject.from_wave_file(os.path.join(BASE_DIR, 'audio', 'positive.wav'))
 play_obj = wave_obj.play()
 play_obj.wait_done()
 

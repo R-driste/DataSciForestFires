@@ -15,8 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wildfire App Home</title>
     <link rel="stylesheet" href="styling.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="winky-rough">
     <h1>Welcome to the Wildfire Analysis App</h1>
     <p> This application hopes to address the effectiveness of different elementary prediction methods for wildfires.</p>
     <p>Select an option to proceed:</p>
@@ -40,6 +43,9 @@
         });
 
     </script>
+    <div id="flame-container">
+        <img src="figures_graph/flame.png" alt="Flames" id="flame-decals" />
+    </div>
 
 </body>
 </html>

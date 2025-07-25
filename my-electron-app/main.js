@@ -12,7 +12,6 @@ let significance = ["Your home typically had a lower risk of damage ranging from
     "Historically, homes like this have been prone to get significantly damaged >50%. It is not 100% determined your house will be destroyed, but it is statistically more likely.",
     "Your home is statistically likely to not get damaged at all, but this is not a guarantee so still prepare for the worst."];
 
-
 app.on("ready", () => {
     mainWindow = new BrowserWindow({
         width: 800,
