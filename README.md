@@ -54,10 +54,15 @@ To enable you to interact with the project yourself, I began developing an elect
 
 To use the app, please download this repository to your local computer. Download and move these zips ("DATASETS" and "heavy_zip") to the my-electron-app folder, then expand them. These hold the models and datasets. Without these files, the app and notebooks will not work properly. These files are too large to be transmitted through Github without warning.
 
-To run the electron app at this moment you must setup node on your local computer (unadvisable) but a better deployed version will be available soon. The figures for this project are placed in the figures folder and the notebooks with which I ran these tests are within the notebooks folder.
-
+To run the electron app:
 ```bash
 cd your-folder-name
+/opt/homebrew/bin/python3.11 -m venv venv
+source venv/bin/activate
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
 npm init -y
 npm install
 npm start

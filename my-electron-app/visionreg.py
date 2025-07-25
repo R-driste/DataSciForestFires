@@ -5,8 +5,12 @@ import tempfile
 import torch
 from torchvision import models, transforms
 import torch.nn as nn
+import simpleaudio as sa
 from PIL import Image
-from playsound import playsound
+
+wave_obj = sa.WaveObject.from_wave_file("clock.wav")
+play_obj = wave_obj.play()
+play_obj.wait_done()
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -48,9 +52,11 @@ with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
 prediction = predict_image(tmp_path)
 explanation = f"This {image_type.lower()} image was classified as {prediction.lower()}."
 
+wave_obj = sa.WaveObject.from_wave_file("positive.wav")
+play_obj = wave_obj.play()
+play_obj.wait_done()
+
 print(json.dumps({
     "prediction": prediction,
     "explanation": explanation
 }))
-
-playsound('tada-fanfare-a-6313.mp3')

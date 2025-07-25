@@ -6,12 +6,16 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from PIL import ImageFile, Image
-from playsound import playsound
-
+import simpleaudio as sa
 import os
+import logging
+
+wave_obj = sa.WaveObject.from_wave_file("clock.wav")
+play_obj = wave_obj.play()
+play_obj.wait_done()
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
-import logging
 logging.getLogger('tensorflow').setLevel(logging.ERROR)
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
@@ -44,9 +48,11 @@ with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
 prediction = predict_image(tmp_path)
 explanation = f"This {image_type.lower()} image was classified as {prediction.lower()}."
 
+wave_obj = sa.WaveObject.from_wave_file("positive.wav")
+play_obj = wave_obj.play()
+play_obj.wait_done()
+
 print(json.dumps({
     "prediction": prediction,
     "explanation": explanation
 }))
-
-playsound('tada-fanfare-a-6313.mp3')

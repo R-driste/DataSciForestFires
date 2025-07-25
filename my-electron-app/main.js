@@ -7,10 +7,11 @@ const { dialog } = require('electron');
 let mainWindow;
 let result = 7;
 
-let categories = ['Damaged (1-50%)', 'Destroyed (>50%)', 'No Damage'];
+let categories = ['Damaged (1-50%)', 'Destroyed (>50%)', 'No Damage', 'None'];
 let significance = ["Your home typically had a lower risk of damage ranging from 1-50%. Make sure to stay prepared for future fires.",
     "Historically, homes like this have been prone to get significantly damaged >50%. It is not 100% determined your house will be destroyed, but it is statistically more likely.",
     "Your home is statistically likely to not get damaged at all, but this is not a guarantee so still prepare for the worst."];
+
 
 app.on("ready", () => {
     mainWindow = new BrowserWindow({
@@ -28,8 +29,10 @@ app.on("ready", () => {
 ipcMain.on("submit-form", (event, formData) => {
     console.log("Classification Running!");
 
+    //continue if no error :>
     const options = {
         mode: "json",
+        pythonPath: path.join(__dirname, 'venv', 'bin', 'python3'),
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname),
     };
@@ -38,8 +41,20 @@ ipcMain.on("submit-form", (event, formData) => {
     pyshell.send(formData);
 
     pyshell.on("message", (message) => {
-        const prediction = message.prediction;
-        const explanation = message.explanation || "No explanation provided";
+        if ("error" in message) {
+        dialog.showMessageBox(mainWindow, {
+            type: 'error',
+            title: 'Prediction Failed',
+            message: "Invalid input, try again.",
+        });
+
+        event.sender.send("form-result", { error: "Invalid input, try again." });
+        return;
+    }
+        prediction = message.prediction;
+        if (prediction == "undefined") {
+            prediction = 4;
+        }
 
         dialog.showMessageBox(mainWindow, {
             type: 'info',
@@ -63,13 +78,14 @@ ipcMain.on("submit-vision-form", (event, formData) => {
     console.log("Vision Running!");
 
     //choose correct script based on image type selected
-    let scriptName = "vision.py";
+    let scriptName = "visionreg.py";
     if (formData.imageType && formData.imageType.toLowerCase().includes("satellite")) {
-        scriptName = "vision2.py";
+        scriptName = "visionsat.py";
     }
 
     const options = {
         mode: "json",
+        pythonPath: path.join(__dirname, 'venv', 'bin', 'python3'),
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname),
     };
@@ -80,7 +96,7 @@ ipcMain.on("submit-vision-form", (event, formData) => {
 
     pyshell.on("message", (message) => {
         const prediction = message.prediction;
-        const explanation = message.explanation;
+        explanation = message.explanation;
 
         dialog.showMessageBox(mainWindow, {
             type: 'info',

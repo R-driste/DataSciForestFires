@@ -1,0 +1,11 @@
+joblib
+pandas
+scikit-learn==1.5.1
+pillow
+numpy
+tensorflow
+keras
+playsound
+simpleaudio
+torch
+torchvision

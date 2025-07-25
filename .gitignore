@@ -4,3 +4,4 @@ my-electron-app/heavy_zip/
 venv/
 DATASETS/
 backups/
+out/
