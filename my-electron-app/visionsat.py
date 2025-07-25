@@ -1,3 +1,6 @@
+'''
+This python helper script is used to classify the input satellite image for fire.
+'''
 import sys
 import json
 import base64
@@ -16,12 +19,13 @@ wave_obj = sa.WaveObject.from_wave_file(os.path.join(BASE_DIR, 'audio', 'clock.w
 play_obj = wave_obj.play()
 play_obj.wait_done()
 
+#avoid interrupting the json for later use
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-
 logging.getLogger('tensorflow').setLevel(logging.ERROR)
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
+#load model from weights
 model = load_model(os.path.join(BASE_DIR, 'heavy_zip', 'vision', 'secondmod.h5'))
 class_names = ['nofire', 'fire']
 
@@ -48,7 +52,7 @@ with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
     tmp_path = tmp.name
 
 prediction = predict_image(tmp_path)
-explanation = f"This {image_type.lower()} image was classified as {prediction.lower()}."
+explanation = f"This {image_type.lower()} image was classified as {prediction.lower()} :D"
 
 wave_obj = sa.WaveObject.from_wave_file(os.path.join(BASE_DIR, 'audio', 'positive.wav'))
 play_obj = wave_obj.play()

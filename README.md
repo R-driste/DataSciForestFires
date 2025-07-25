@@ -10,9 +10,11 @@ To enable you to interact with the project yourself, I began developing an elect
 files folder: https://drive.google.com/drive/folders/1_-aa13E9cMbITtSrOPwRTBYnCwgR9u7Z?usp=sharing
 
 [NOT RECOMMENDED] PACKAGED APP:
+Download your version zip and unzip. This is the application, ready to run.
 I have the packaged application available for Mac, Windows and Linux. I have only tested Mac. I highly recommend the repository option instead because it is much faster. Additionally your device will not recognize the security and safety of this packaged application, and you will have to bypass. Please note that the packaged version will take a long time to verify and run, and initially it freezes when uploading images.
 
 INSTRUCTIONS TO SETUP ENV AND REPO
+Download heavy zip and unzip in my-electron-folder. All necessary assets are now accessible.
 To use the app, please download this repository to your local computer. Download and move these zips ("DATASETS" and "heavy_zip") to the my-electron-app folder, then expand them. These hold the models and datasets. Without these files, the app and notebooks will not work properly. These files are too large to be transmitted through Github without warning.
 
 To run the electron app:

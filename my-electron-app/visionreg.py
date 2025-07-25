@@ -1,3 +1,6 @@
+'''
+This python helper script is used to classify the input regular image for fire.
+'''
 import sys
 import json
 import base64
@@ -15,8 +18,7 @@ wave_obj = sa.WaveObject.from_wave_file(os.path.join(BASE_DIR, 'audio', 'clock.w
 play_obj = wave_obj.play()
 play_obj.wait_done()
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+#shape image properly
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
@@ -24,6 +26,7 @@ transform = transforms.Compose([
                          std=[0.229, 0.224, 0.225]),
 ])
 
+#load model from weights
 model = models.resnet18()
 model.fc = nn.Linear(model.fc.in_features, 2)
 model.load_state_dict(torch.load(os.path.join(BASE_DIR, 'heavy_zip', 'vision', 'resnet18_amalgam.pth'), map_location=device))
@@ -53,7 +56,7 @@ with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
     tmp_path = tmp.name
 
 prediction = predict_image(tmp_path)
-explanation = f"This {image_type.lower()} image was classified as {prediction.lower()}."
+explanation = f"This {image_type.lower()} image was classified as {prediction.lower()} :D"
 
 wave_obj = sa.WaveObject.from_wave_file(os.path.join(BASE_DIR, 'audio', 'positive.wav'))
 play_obj = wave_obj.play()
