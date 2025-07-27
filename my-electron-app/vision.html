@@ -13,9 +13,7 @@
 <body class="winky-rough">
     <h1>Computer Vision</h1>
     <p>This is a CV tool for analyzing wildfire damage. Upload a satellite image or a regular image (sat 85% reg 90%). It takes time to process.</p>
-    
     <button class="back-button" onclick="window.location.href='index.html'">Back to Home</button>
-
     <form id="vision-form">
         <label for="imageType">Select Image Type:</label>
         <select id="imageType" name="imageType">
@@ -28,7 +26,6 @@
         <p>We will check that the image is of an acceptable size and format for the model and return the results to you.</p>
         <button type="submit" id="submitButton">Submit</button>
     </form>
-
     <script>
         document.getElementById("vision-form").addEventListener("submit", (e) => {
             e.preventDefault();
