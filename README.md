@@ -8,6 +8,7 @@ This is a data analysis project that branched from my ap stats project which I a
 To enable you to interact with the project yourself, I began developing an electron app which will load the model weights and allow you to use them. The data analysis and app deployment for this project are still incompete but steadily approaching the end.
 
 files folder: https://drive.google.com/drive/folders/1_-aa13E9cMbITtSrOPwRTBYnCwgR9u7Z?usp=sharing
+files explanation: https://docs.google.com/document/d/1jI2lNCgOUgvdx8HeDe8DR9JT9CB5ej2cJ7bPGN6Y8pI/edit?usp=sharing
 
 ##### [NOT RECOMMENDED] PACKAGED APP:
 Download your app version zip and unzip. This is the application, ready to run. 
