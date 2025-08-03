@@ -1,5 +1,5 @@
 # DataSciForestFires
-An analysis of which factors best predict the spread of forest fires using data from Portugal and California.
+An analysis project of which factors best predict the spread of forest fires using data from Portugal and California.
 
 This is a data analysis project that branched from my ap stats project which I am submitting for Shipwrecked! I chose to study different approaches to predicting whether fires will occur and the extent of the damages. I broke the project into 3 smaller components. See the end for few instructions on project setup.
 
