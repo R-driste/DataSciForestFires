@@ -34,7 +34,7 @@ npm install
 npm start
 ```
 
-This project is also a submission to a challenge called Shipwrecked which I am very inspired by. Thank you for your support. - Dristi Roy
+This project is also a submission to a challenge called Shipwrecked which I am very inspired by. Thank you for your support :D I hope to see you guys on the island if you are also going and right now my hackatime is down - Dristi Roy
 
 ----
 ### FEATURE 1
